@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.2.3/showdown.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.4.0/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>-->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<script>
+var getUrlValue = function(VarSearch){
+    var SearchString = window.location.search.substring(1);
+    var VariableArray = SearchString.split('&');
+    for(var i = 0; i < VariableArray.length; i++){
+        var KeyValuePair = VariableArray[i].split('=');
+        if(KeyValuePair[0] === VarSearch){
+            return KeyValuePair[1];
+        }
+    }
+}
+</script>
+<style type="text/css">
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 0.9em;
+}
+.flexcontainer {
+	height:100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+section {
+    padding: 10px;
+}
+
+.topdiv {
+    text-align: center;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eec9fc+0,afefff+100 */
+    background: #eec9fc; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #eec9fc 0%, #afefff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #eec9fc 0%,#afefff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #eec9fc 0%,#afefff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eec9fc', endColorstr='#afefff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.posts {
+    width: 90vw;
+    max-width: 600px;
+}
+.post {
+    border-top: 5px solid black;
+    padding: 5px 0px;
+    margin: 20px 10px;
+}
+</style>
+
+<!-- 
+///////////////
+CUSTOMIZE BELOW
+///////////////
+ -->
+
+<title>!GLUG?</title>
+
+<script>
+$(function() {
+	var converter = new showdown.Converter();
+	$(".markdown").each(function(i) {
+		$(this).html(converter.makeHtml($(this).html()));
+	});
+	//JAVASCRIPT HERE
+});
+</script>
+
+<style type="text/css">
+.centerdiv {
+}
+</style>
+</head>
+<body>
+<section class="topdiv markdown">
+glug: "to make the sound of liquid pouring from a bottle"
+</section>
+<div class="flexcontainer">
+	<section class="centerdiv">
+		<div class="posts">
+
+<div class="post markdown">
+**160601 START**
+
+</div>
+
+        </div>
+	</section>
+</div>
+</body>
+</html>
+
+
+
+
