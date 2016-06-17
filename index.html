@@ -60,6 +60,7 @@ section {
     border-top: 5px solid black;
     padding: 5px 0px;
     margin: 20px 10px;
+    margin-left: 200px; 
 }
 
 .video {
@@ -68,6 +69,30 @@ section {
 
 .post * {
     max-width: 100%;
+}
+
+.centerdiv {
+    height: 100%;
+}
+glugtitle {
+    background-color: black;
+    color: white;
+    float: left;
+    margin-left: -200px;
+    width: 180px;
+    padding: 3px 5px;
+    display: block;
+}
+
+@media screen and (max-width: 692px)   {
+    glugtitle {
+        width: 100% !important;   
+        margin-left: 0px;
+        float:none;
+    }
+    .post {
+        margin-left: 0px;
+    }   
 }
 </style>
 
@@ -89,11 +114,6 @@ $(function() {
 });
 </script>
 
-<style type="text/css">
-.centerdiv {
-    height: 100%;
-}
-</style>
 </head>
 <body>
 <section class="topdiv markdown">
@@ -103,23 +123,75 @@ glug: to make the sound of liquid pouring from a bottle
 	<section class="centerdiv">
 		<div class="posts">
 
+<div class="post markdown" id="160617">
+<glugtitle>160617 GangGang package and documentation</glugtitle>
+
+# GangGang 
+## [강강술래 / Ganggangsullae](https://en.wikipedia.org/wiki/Ganggangsullae)
+![GangGang](https://raw.githubusercontent.com/provolot/GangGang/master/ganggangsullae.jpg)
+
+GangGang is a simple single-file module to use a remote server to execute code, mainly for GhPython/IronPython in Grasshopper3D.
+This allows us to work around the lack of easy module installation in IronPython -- allowing, for example, Numpy, Scipy, Keras, etc. to be used.
+
+While there are much more robust libraries like [Pyro4](https://github.com/irmen/Pyro4/), installation on the Grasshopper/IronPython end is difficult. GangGang allows us to get around this process by allowing the module to be imported easily, or even concatenated directly before GhPython code.
+
+### Installation
+
+```
+pip install GangGang
+```
+
+For Grasshopper scripts, drop GangGang.py in the same file as the *.gh(x) file.
+
+### GangGang.server
+
+A server (ideally, the computer running 'normal' Python) is instantiated by:
+```
+def callback(data):
+    # do something with the data here
+    print data
+    return data
+
+GangGang.server(host, port, callback)
+```
+This server listens, processes data, and returns the result to the client.
+The 'callback' function will be passed a single argument -- the data recieved from the client.
+
+### GangGang.client
+
+A client request is executed by:
+```
+result = GangGang.client(host, port, data)
+```
+This client sends data, waits for a response, and returns the result.
+
+### Example
+
+See example_python.py or Python example usage.
+
+See below or example_gh3d.ghx for example usage. 
+
+![Example Gh3d](https://raw.githubusercontent.com/provolot/GangGang/master/example_gh3d.png)
+
+
+</div>
+
 <div class="post markdown">
-160612 GangGang - 
-Voxel-based 3D ML classification - prototype 1
+<glugtitle>160612 GangGang - Voxel-based 3D ML classification - prototype 1</glugtitle>
 
 <iframe width="640" height="480" src="https://www.youtube.com/embed/pn8yuOofb4U" frameborder="0" allowfullscreen></iframe>
 
 </div>
 
 <div class="post markdown">
-160610 GangGang - sending data from GhPython (IronPython) to another computer's normal Python over Sockets
+<glugtitle>160610 GangGang - sending data from GhPython (IronPython) to another computer's normal Python over Sockets</glugtitle>
 
-<img src="https://github.com/provolot/GangGang/raw/master/MEDIA/example_addition.gif">
+<img src="https://github.com/provolot/GangGang/raw/master/MEDIA/160610_example_addition.gif">
 
 </div>
 
 <div class="post markdown">
-160609 GameTrak test
+<glugtitle>160609 GameTrak test</glugtitle>
 
 <iframe src="https://player.vimeo.com/video/170113428" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/170113428">Grasshopper GameTrak Test</a> from <a href="https://vimeo.com/provolot">provolot</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -136,7 +208,7 @@ password: "bricksbricks".
 </div>
 
 <div class="post markdown">
-**160601 START**
+<glugtitle>**160601 START**</glugtitle>
 
 prototypes.
 </div>
