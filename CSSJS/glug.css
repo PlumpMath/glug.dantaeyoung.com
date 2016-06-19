@@ -63,6 +63,7 @@ glugtitle {
 @media screen and (max-width: 692px)   {
     glugtitle {
         width: 100% !important;   
+        box-sizing: border-box;
         margin-left: 0px;
         float:none;
     }
