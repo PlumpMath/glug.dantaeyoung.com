@@ -79,3 +79,7 @@ glugtitle {
 gluglink {
     display: block;
 }
+
+.replaced_char {
+    opacity: 0.4;
+}
