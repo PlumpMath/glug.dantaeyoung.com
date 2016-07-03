@@ -68,4 +68,12 @@ theme: glug
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: rsync
+  host: glug.dantaeyoung.com
+  user: glug_dantaeyoung_com
+  root: /home/glug_dantaeyoung_com/glug.dantaeyoung.com
+  port: 22
+  delete: true
+  verbose: true
+  ignore_errors: false
+ 

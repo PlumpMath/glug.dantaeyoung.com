@@ -1,3 +1,15 @@
+$lightpink: #eec9fc;
+$lightblue: #afefff;
+$almostblack: #333;
+
+@mixin linear-gradient($color_a, $color_b) {
+    background: $color_a; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  $color_a 0%, $color_b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  $color_a 0%,$color_b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  $color_a 0%,$color_b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_a', endColorstr='$color_b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 body {
 	margin: 0px;
 	padding: 0px;
@@ -8,13 +20,9 @@ body {
 
 section.header {
     text-align: center;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eec9fc+0,afefff+100 */
-    background: #eec9fc; /* Old browsers */
-    background: -moz-linear-gradient(-45deg,  #eec9fc 0%, #afefff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg,  #eec9fc 0%,#afefff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg,  #eec9fc 0%,#afefff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eec9fc', endColorstr='#afefff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$lightpink+0,afefff+100 */
     padding: 5px 20px;
+    @include linear-gradient($lightpink, $lightblue);
 }
 
 .flexcontainer {
@@ -34,14 +42,23 @@ section.header {
 }
 
 
+a {
+    color: darken($lightblue, 40);
+    transition: color 0.2s ease;
+
+
+    &:hover {
+        color: darken($lightpink, 20);
+   }
+}
 
 .post {
-    border-top: 5px solid black;
+    border-top: 5px solid $almostblack;
     padding: 5px 0px;
     margin: 20px 10px;
 
     & .title {
-        background-color: black;
+        @include linear-gradient(#666, #222);
         color: white;
         float: left;
         margin-left: -200px;
