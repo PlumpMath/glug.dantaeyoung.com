@@ -9,12 +9,18 @@ var getUrlValue = function(VarSearch){
     }
 }
 
+
 $(function() {
-	var converter = new showdown.Converter();
-	$(".markdown").each(function(i) {
-		$(this).html(converter.makeHtml($(this).html()));
-	});
-    $('.lazyYT').lazyYT();
+    $.post("php/getpost.php", function(data) {
+        console.log(data);
+    });
+
+
+    $.post("http://localhost:4000/php/getpost.php", "momo", function(data) {
+        console.log(data);
+    });
+
+//    $('.lazyYT').lazyYT();
 });
 
 

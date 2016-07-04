@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title><%= config.title %></title>
   <%- css('css/main') %>
+
 </head>
 
 <body>
@@ -24,23 +25,17 @@
     </section>
 
 
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=11000703; 
-var sc_invisible=1; 
-var sc_security="1c89db2a"; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="site stats"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="//c.statcounter.com/11000703/0/1c89db2a/1/" alt="site
-stats"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
+  <%- js('js/utilities.js') %>
+  <%- js('js/erosion.js') %>
+  <%- partial('trackers') %>
+
+  <script type="text/javascript">
+      jQuery(function(){
+      });
+  </script>
+
 
 </body>
 </html>
