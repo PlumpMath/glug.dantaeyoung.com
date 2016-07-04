@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>160617 GangGang package and documentation</title>
+	<meta name="date" content="2016 06 17"/>
+</head>
+<body>
+
+<h1 id="ganggang"><a href="https://github.com/provolot/GangGang">GangGang</a></h1>
+
+<p><img src="https://raw.githubusercontent.com/provolot/GangGang/master/ganggangsullae.jpg" alt="GangGang" />
+<em>강강술래 / Ganggangsullae dance</em></p>
+
+<p>GangGang is a simple single-file module to use a remote server to execute code, mainly for GhPython/IronPython in Grasshopper3D.
+This allows us to work around the lack of easy module installation in IronPython &#8211; allowing, for example, Numpy, Scipy, Keras, etc. to be used.</p>
+
+<p>While there are much more robust libraries like <a href="https://github.com/irmen/Pyro4/">Pyro4</a>, installation on the Grasshopper/IronPython end is difficult. GangGang allows us to get around this process by allowing the module to be imported easily, or even concatenated directly before GhPython code.</p>
+
+<h3 id="installation">Installation</h3>
+
+<pre><code>pip install GangGang
+</code></pre>
+
+<p>For Grasshopper scripts, drop GangGang.py in the same file as the *.gh(x) file.</p>
+
+<h3 id="ganggang.server">GangGang.server</h3>
+
+<p>A server (ideally, the computer running &#8216;normal&#8217; Python) is instantiated by:
+```
+def callback(data):
+ # do something with the data here
+ print data
+ return data</p>
+
+<p>GangGang.server(host, port, callback)
+```
+This server listens, processes data, and returns the result to the client.
+The &#8216;callback&#8217; function will be passed a single argument &#8211; the data recieved from the client.</p>
+
+<h3 id="ganggang.client">GangGang.client</h3>
+
+<p>A client request is executed by:
+<code>
+result = GangGang.client(host, port, data)
+</code>
+This client sends data, waits for a response, and returns the result.</p>
+
+<h3 id="example">Example</h3>
+
+<p>See example_python.py or Python example usage.</p>
+
+<p>See below or example_gh3d.ghx for example usage. </p>
+
+<figure>
+<img src="https://raw.githubusercontent.com/provolot/GangGang/master/example_gh3d.png" alt="Example Gh3d" />
+<figcaption>Example Gh3d</figcaption>
+</figure>
+
+</body>
+</html>
