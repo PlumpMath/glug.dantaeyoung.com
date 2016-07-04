@@ -35,18 +35,20 @@ function walk_and_replace(elem, repl_char) {
 }
 
 
-$(document).ready(function(){ 
-    console.log("tryto");
-
+function frequency_erosion(replace_num) {
     var freq = "zqxjkvbpygfwmucldrhsnioate";
-    var replace_num = 12;
 
     _.forEach(freq, function(d, i) {
         if (i < replace_num) {
             walk_and_replace(document.body, freq[i])
         }
     });
+}
 
+$(document).ready(function(){ 
+    console.log("tryto");
+
+    //frequency_erosion(12);
 
 });
 

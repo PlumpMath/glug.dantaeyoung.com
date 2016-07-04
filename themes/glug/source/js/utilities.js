@@ -11,15 +11,15 @@ var getUrlValue = function(VarSearch){
 
 
 $(function() {
-    $.post("php/getpost.php", function(data) {
+    /*
+     * $.post("php/getpost.php", function(data) {
         console.log(data);
     });
-
 
     $.post("http://localhost:4000/php/getpost.php", "momo", function(data) {
         console.log(data);
     });
-
+    */
 //    $('.lazyYT').lazyYT();
 });
 
